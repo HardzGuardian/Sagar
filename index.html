@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sagar Salunkhe - Portfolio</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=DM+Mono:wght@300;400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <div class="grid-bg">
+        <div class="grid-line" style="left: 10%"></div>
+        <div class="grid-line" style="left: 20%"></div>
+        <div class="grid-line" style="left: 30%"></div>
+        <div class="grid-line" style="left: 40%"></div>
+        <div class="grid-line" style="left: 50%"></div>
+        <div class="grid-line" style="left: 60%"></div>
+        <div class="grid-line" style="left: 70%"></div>
+        <div class="grid-line" style="left: 80%"></div>
+        <div class="grid-line" style="left: 90%"></div>
+    </div>
+
+    <header>
+        <nav class="nav-content">
+            <a href="#home" class="logo">.sagarsalunkhe98</a>
+            <div class="mobile-menu-btn" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li>
+                    <div class="theme-toggle" onclick="toggleTheme()"></div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home">
+            <div class="home-content">
+                <h1>Hi, I'm Sagar Salunkhe</h1>
+                <p>Designer, Developer, and Creative Problem Solver</p>
+
+                <div class="social-links">
+                    <a href="https://github.com/HardzGuardian" target="_blank" class="social-link" title="GitHub">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.youtube.com/@HardzGuardianTM" target="_blank" class="social-link"
+                        title="YouTube">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M23.5 6.2s-.2-1.6-.8-2.3c-.8-.8-1.7-.8-2.1-.9C17.7 2.8 12 2.8 12 2.8h0s-5.7 0-8.6.2c-.4.1-1.3.1-2.1.9C.7 4.6.5 6.2.5 6.2S.3 8.1.3 10v1.9c0 1.9.2 3.8.2 3.8s.2 1.6.8 2.3c.8.8 1.9.8 2.4.9 1.7.2 7.3.2 7.3.2s5.7 0 8.6-.2c.4-.1 1.3-.1 2.1-.9.6-.7.8-2.3.8-2.3s.2-1.9.2-3.8V10c0-1.9-.2-3.8-.2-3.8zM9.75 14.1V7.9l6 3.1-6 3.1z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/sagar-salunkhe98" target="_blank" class="social-link"
+                        title="LinkedIn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                    </a>
+                    <a href="https://instagram.com/sagarsalunkhe98" target="_blank" class="social-link"
+                        title="Instagram">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z" />
+                        </svg>
+                    </a>
+                </div>
+
+                <a href="#" class="btn-primary" download>Download Resume</a>
+            </div>
+            <div class="home-image">
+                <div class="profile-img">
+                    <img src="img/Home.jpeg" alt="Sagar Salunkhe" onerror="this.style.display='none'">
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <h2 class="section-heading">About Me</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="img/sagar.jpg" alt="About Sagar" onerror="this.style.display='none'">
+                </div>
+                <div class="about-text">
+                    <h3>I create digital experiences that blend design with technology</h3>
+                    <p>My passion lies in building products that are both beautiful and functional. I believe in
+                        user-centered design, clean code, and the power of collaboration.</p>
+                    <p>When I'm not coding or designing, you can find me playing games, exploring new technologies, or
+                        contributing to open-source projects.</p>
+                    <p>I'm a fresher based in Navi Mumbai, India, currently open to work and excited about opportunities
+                        in web development, game development, and creative problem-solving.</p>
+                    <a href="#" class="btn-secondary">Read More</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2 class="section-heading">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>HTML & CSS</span>
+                        <span class="skill-percentage">82%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="--skill-width: 82%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Adobe Photoshop</span>
+                        <span class="skill-percentage">85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="--skill-width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Python</span>
+                        <span class="skill-percentage">80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="--skill-width: 80%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Adobe After Effects</span>
+                        <span class="skill-percentage">75%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="--skill-width: 75%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Unity & Game Development</span>
+                        <span class="skill-percentage">60%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="--skill-width: 60%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Computer Hardware Installation</span>
+                        <span class="skill-percentage">95%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="--skill-width: 95%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications">
+            <h2 class="section-heading">Certifications</h2>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <img src="logo/github.png" alt="GitHub Certification" onerror="this.innerHTML='🎓'">
+                    </div>
+                    <h3>Career Essentials in GitHub Professional Certificate</h3>
+                    <p>GitHub and LinkedIn Learning</p>
+                    <p style="font-size: 12px; margin-bottom: 16px;">Issued: 2025</p>
+                    <a href="doc/Certificate.pdf" target="_blank" class="cert-link">View Certificate</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services">
+            <h2 class="section-heading">Services</h2>
+            <div class="carousel-container">
+                <button class="carousel-btn prev-btn" aria-label="Previous">❮</button>
+                <div class="services-carousel">
+                    <div class="carousel-track">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <img src="logo/PS.png" alt="Photoshop" onerror="this.innerHTML='💻'">
+                            </div>
+                            <h3>Photoshop</h3>
+                            <p>Professional photo manipulation, graphic design, and digital artwork creation using Adobe Photoshop
+                                with advanced techniques.</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <img src="logo/AE.png" alt="After Effects" onerror="this.innerHTML='🎨'">
+                            </div>
+                            <h3>After Effects</h3>
+                            <p>Professional video editing and motion graphics using Adobe After Effects, creating compelling visual stories and anime edits.</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <img src="logo/Unity3d.png" class="invert-dark" alt="Game Development">
+                            </div>
+                            <h3>Game Development</h3>
+                            <p>Creating engaging games with Unity and Godot Engine, from concept to deployment.</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <img src="logo/UX.png" alt="UI/UX Design" onerror="this.innerHTML='🎨'">
+                            </div>
+                            <h3>UI/UX Design</h3>
+                            <p>Designing intuitive user interfaces with focus on user experience and accessibility.</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <img src="logo/code.png" alt="Scripting & Automation" onerror="this.innerHTML='🎨'">
+                            </div>
+                            <h3>Scripting & Automation</h3>
+                            <p>Developing scripts and automated workflows to streamline processes, increase efficiency, and reduce manual tasks.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn next-btn" aria-label="Next">❯</button>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2 class="section-heading">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-media">
+                        <video autoplay loop muted playsinline>
+                            <source src="video/game2.webm" type="video/webm">
+                        </video>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-header">
+                            <span class="project-type">.game</span>
+                            <span class="project-status in-progress">In Progress</span>
+                        </div>
+                        <h3>Space Shooter</h3>
+                        <p>A retro-style arcade shooter built with Unity and C#. Features procedural level generation
+                            and
+                            particle effects.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-media">
+                        <video autoplay loop muted playsinline>
+                            <source src="video/game.webm" type="video/webm">
+                        </video>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-header">
+                            <span class="project-type">.game</span>
+                            <span class="project-status in-progress">In Progress</span>
+                        </div>
+                        <h3>Zombie Shooter</h3>
+                        <p>An intense low-poly survival shooter built with Unity and C#, featuring wave-based gameplay, item drops, and an arena-style map design for endless zombie combat.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-media">
+                        <video autoplay loop muted playsinline>
+                            <source src="video/Note.webm" type="video/webm">
+                        </video>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-header">
+                            <span class="project-type">.webApp</span>
+                            <span class="project-status in-progress">In Progress</span>
+                        </div>
+                        <h3>NoteApp</h3>
+                        <p>A modern note-sharing web application built with React and TypeScript, cloud sync, intuitive user interface.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-media">
+                        <video autoplay loop muted playsinline>
+                            <source src="video/Money.webm" type="video/webm">
+                        </video>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-header">
+                            <span class="project-type">.webApp</span>
+                            <span class="project-status draft">Draft</span>
+                        </div>
+                        <h3>Personal Cred</h3>
+                        <p>A personal finance management web application built with Node.js and Express, featuring expense tracking, budget planning, No-Login required.</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2 class="section-heading">Contact Me</h2>
+            <div class="contact-container">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required placeholder="Your message here..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-buttons">
+            <a href="tel:+918928657399" class="footer-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                    </path>
+                </svg>
+                Call Me
+            </a>
+            <a href="mailto:sagarsalunkhe98@gmail.com" class="footer-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                Email Me
+            </a>
+        </div>
+
+        <div class="footer-social">
+            <a href="https://github.com/HardzGuardian" target="_blank" class="social-link" title="GitHub">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z" />
+                </svg>
+            </a>
+            <a href="https://www.youtube.com/@HardzGuardianTM" target="_blank" class="social-link" title="YouTube">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M23.5 6.2s-.2-1.6-.8-2.3c-.8-.8-1.7-.8-2.1-.9C17.7 2.8 12 2.8 12 2.8h0s-5.7 0-8.6.2c-.4.1-1.3.1-2.1.9C.7 4.6.5 6.2.5 6.2S.3 8.1.3 10v1.9c0 1.9.2 3.8.2 3.8s.2 1.6.8 2.3c.8.8 1.9.8 2.4.9 1.7.2 7.3.2 7.3.2s5.7 0 8.6-.2c.4-.1 1.3-.1 2.1-.9.6-.7.8-2.3.8-2.3s.2-1.9.2-3.8V10c0-1.9-.2-3.8-.2-3.8zM9.75 14.1V7.9l6 3.1-6 3.1z" />
+                </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/sagar-salunkhe98" target="_blank" class="social-link" title="LinkedIn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                </svg>
+            </a>
+            <a href="https://instagram.com/sagarsalunkhe98" target="_blank" class="social-link" title="Instagram">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z" />
+                </svg>
+            </a>
+        </div>
+
+        <p style="margin-top: 30px; color: var(--text-gray);">&copy; 2025 Sagar Salunkhe. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+            document.querySelector('.mobile-menu-btn').classList.toggle('active');
+            document.body.style.overflow = document.body.style.overflow === 'hidden' ? '' : 'hidden';
+        }
+
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+            localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+        }
+
+        if (localStorage.getItem('theme') === 'light') {
+            document.body.classList.add('light-mode');
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    if (this.classList.contains('nav-link')) {
+                        this.classList.add('active');
+                    }
+                }
+
+                // Close mobile menu if open
+                if (window.innerWidth <= 768) {
+                    document.querySelector('.nav-links').classList.remove('active');
+                    document.querySelector('.mobile-menu-btn').classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.skill-item').forEach(skill => {
+            skillObserver.observe(skill);
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        });
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section[id]');
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Carousel Functionality - Infinite Sliding
+        const track = document.querySelector('.carousel-track');
+        const nextBtn = document.querySelector('.next-btn');
+        const prevBtn = document.querySelector('.prev-btn');
+        let cards = Array.from(document.querySelectorAll('.service-card'));
+        const originalCount = cards.length;
+
+        // Clone cards for seamless loop [Clones] [Originals] [Clones]
+        // Prepend clones (Set 1) - Iterate in reverse to maintain order when prepending
+        cards.slice().reverse().forEach(card => {
+            const clone = card.cloneNode(true);
+            clone.classList.add('clone');
+            track.insertBefore(clone, track.firstChild);
+        });
+
+        // Append clones (Set 3)
+        cards.forEach(card => {
+            const clone = card.cloneNode(true);
+            clone.classList.add('clone');
+            track.appendChild(clone);
+        });
+
+        // Re-query cards to include clones
+        let allCards = document.querySelectorAll('.service-card');
+
+        // Start at the beginning of the original set (Set 2)
+        // Set 1 has 'originalCount' items. So index starts at 'originalCount'.
+        let currentIndex = originalCount;
+        let isTransitioning = false;
+
+        function updateCarousel(transition = true) {
+            const cardWidth = allCards[0].offsetWidth + 32; // card width + gap
+
+            if (!transition) {
+                track.style.transition = 'none';
+            } else {
+                track.style.transition = 'transform 0.3s ease-in-out';
+            }
+
+            const translateX = currentIndex * cardWidth;
+            track.style.transform = `translateX(-${translateX}px)`;
+        }
+
+        // Handle transition end for seamless loop
+        track.addEventListener('transitionend', () => {
+            isTransitioning = false;
+
+            // If at the end of Set 3 (last clone), jump to end of Set 2 (last original)
+            // Actually, we usually jump when we reach the *start* of a clone set.
+
+            // Ranges:
+            // 0 to originalCount-1: Set 1 (Clones)
+            // originalCount to 2*originalCount-1: Set 2 (Originals)
+            // 2*originalCount to 3*originalCount-1: Set 3 (Clones)
+
+            // If we are in Set 3 (After originals)
+            if (currentIndex >= 2 * originalCount) {
+                track.style.transition = 'none';
+                currentIndex = currentIndex - originalCount;
+                updateCarousel(false);
+            }
+
+            // If we are in Set 1 (Before originals)
+            if (currentIndex < originalCount) {
+                track.style.transition = 'none';
+                currentIndex = currentIndex + originalCount;
+                updateCarousel(false);
+            }
+        });
+
+        function moveSlide(direction) {
+            if (isTransitioning) return;
+            isTransitioning = true;
+
+            if (direction === 'next') {
+                currentIndex++;
+            } else {
+                currentIndex--;
+            }
+            updateCarousel();
+        }
+
+        nextBtn.addEventListener('click', () => {
+            moveSlide('next');
+        });
+
+        prevBtn.addEventListener('click', () => {
+            moveSlide('prev');
+        });
+
+        // Initial update without transition
+        // Wait for layout to settle (important for offsetWidth)
+        window.addEventListener('load', () => {
+             updateCarousel(false);
+        });
+
+        // Also call immediately for development (sometimes load is already fired)
+        updateCarousel(false);
+
+        // Update on resize
+        window.addEventListener('resize', () => {
+            // Re-calculate width. Resetting to a safe index might be good but not strictly necessary if logic holds.
+            // Just update position without transition to prevent glitch
+            track.style.transition = 'none';
+            updateCarousel(false);
+        });
+
+        // Touch Swipe Support for Carousel
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        track.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        track.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+            const threshold = 50; // Minimum swipe distance
+            const swipeDistance = touchStartX - touchEndX;
+
+            if (Math.abs(swipeDistance) > threshold) {
+                if (swipeDistance > 0) {
+                    // Swipe Left - Next
+                    moveSlide('next');
+                } else {
+                    // Swipe Right - Prev
+                    moveSlide('prev');
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
