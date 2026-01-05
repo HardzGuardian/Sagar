@@ -413,7 +413,8 @@ section {
 .services-carousel,
 .certifications-carousel {
     overflow: hidden;
-    width: 100%;
+    flex: 1;
+    min-width: 0;
     padding: 10px 10px;
 }
 
