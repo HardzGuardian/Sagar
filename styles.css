@@ -410,7 +410,8 @@ section {
     gap: 20px;
 }
 
-.services-carousel {
+.services-carousel,
+.certifications-carousel {
     overflow: hidden;
     width: 100%;
     padding: 10px 10px;
@@ -481,6 +482,7 @@ section {
 }
 
 body:not(.light-mode) .cert-icon img[src*="github"],
+body:not(.light-mode) .cert-icon img[src*="Unity3d"],
 body:not(.light-mode) .service-icon img[src*="Unity3d"] {
     filter: brightness(0) invert(1);
 }
@@ -595,6 +597,8 @@ body:not(.light-mode) .service-icon img[src*="Unity3d"] {
     padding: 32px;
     transition: all 0.3s;
     animation: fadeInUp 0.6s ease;
+    flex: 0 0 calc(33.333% - 22px);
+    min-width: 300px;
 }
 
 .cert-card:hover {

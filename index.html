@@ -177,23 +177,56 @@
         <!-- Certifications Section -->
         <section id="certifications">
             <h2 class="section-heading">Certifications</h2>
-            <div class="cert-grid">
-                <div class="cert-card">
-                    <div class="cert-icon">
-                        <img src="logo/github.png" alt="GitHub Certification" onerror="this.innerHTML='🎓'">
+            <div class="carousel-container" id="cert-carousel">
+                <button class="carousel-btn prev-btn" aria-label="Previous">❮</button>
+                <div class="certifications-carousel">
+                    <div class="carousel-track">
+                        <div class="cert-card">
+                            <div class="cert-icon">
+                                <img src="logo/github.png" alt="GitHub Certification" onerror="this.innerHTML='🎓'">
+                            </div>
+                            <h3>Career Essentials in GitHub Professional Certificate</h3>
+                            <p>GitHub and LinkedIn Learning</p>
+                            <p style="font-size: 12px; margin-bottom: 16px;">Issued: 2025</p>
+                            <a href="doc/Certificate.pdf" target="_blank" class="cert-link">View Certificate</a>
+                        </div>
+                        <div class="cert-card">
+                            <div class="cert-icon">
+                                <img src="logo/code.png" alt="Python Certification" onerror="this.innerHTML='🎓'">
+                            </div>
+                            <h3>Python Programming Certificate</h3>
+                            <p>Online Course Platform</p>
+                            <p style="font-size: 12px; margin-bottom: 16px;">Issued: 2024</p>
+                            <a href="#" class="cert-link">View Certificate</a>
+                        </div>
+                        <div class="cert-card">
+                            <div class="cert-icon">
+                                <img src="logo/Unity3d.png" alt="Unity Developer Certification" onerror="this.innerHTML='🎓'">
+                            </div>
+                            <h3>Unity Game Developer Certificate</h3>
+                            <p>Unity Technologies</p>
+                            <p style="font-size: 12px; margin-bottom: 16px;">Issued: 2024</p>
+                            <a href="#" class="cert-link">View Certificate</a>
+                        </div>
+                        <div class="cert-card">
+                            <div class="cert-icon">
+                                <img src="logo/PS.png" alt="Adobe Photoshop Certification" onerror="this.innerHTML='🎓'">
+                            </div>
+                            <h3>Adobe Photoshop Expert</h3>
+                            <p>Adobe Certified Professional</p>
+                            <p style="font-size: 12px; margin-bottom: 16px;">Issued: 2023</p>
+                            <a href="#" class="cert-link">View Certificate</a>
+                        </div>
                     </div>
-                    <h3>Career Essentials in GitHub Professional Certificate</h3>
-                    <p>GitHub and LinkedIn Learning</p>
-                    <p style="font-size: 12px; margin-bottom: 16px;">Issued: 2025</p>
-                    <a href="doc/Certificate.pdf" target="_blank" class="cert-link">View Certificate</a>
                 </div>
+                <button class="carousel-btn next-btn" aria-label="Next">❯</button>
             </div>
         </section>
 
         <!-- Services Section -->
         <section id="services">
             <h2 class="section-heading">Services</h2>
-            <div class="carousel-container">
+            <div class="carousel-container" id="services-carousel">
                 <button class="carousel-btn prev-btn" aria-label="Previous">❮</button>
                 <div class="services-carousel">
                     <div class="carousel-track">
@@ -463,139 +496,120 @@
         });
 
         // Carousel Functionality - Infinite Sliding
-        const track = document.querySelector('.carousel-track');
-        const nextBtn = document.querySelector('.next-btn');
-        const prevBtn = document.querySelector('.prev-btn');
-        let cards = Array.from(document.querySelectorAll('.service-card'));
-        const originalCount = cards.length;
+        function setupCarousel(containerId, cardSelector) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
 
-        // Clone cards for seamless loop [Clones] [Originals] [Clones]
-        // Prepend clones (Set 1) - Iterate in reverse to maintain order when prepending
-        cards.slice().reverse().forEach(card => {
-            const clone = card.cloneNode(true);
-            clone.classList.add('clone');
-            track.insertBefore(clone, track.firstChild);
-        });
+            const track = container.querySelector('.carousel-track');
+            const nextBtn = container.querySelector('.next-btn');
+            const prevBtn = container.querySelector('.prev-btn');
+            let cards = Array.from(container.querySelectorAll(cardSelector));
 
-        // Append clones (Set 3)
-        cards.forEach(card => {
-            const clone = card.cloneNode(true);
-            clone.classList.add('clone');
-            track.appendChild(clone);
-        });
+            if (cards.length === 0) return;
 
-        // Re-query cards to include clones
-        let allCards = document.querySelectorAll('.service-card');
+            const originalCount = cards.length;
 
-        // Start at the beginning of the original set (Set 2)
-        // Set 1 has 'originalCount' items. So index starts at 'originalCount'.
-        let currentIndex = originalCount;
-        let isTransitioning = false;
+            // Clone cards for seamless loop
+            cards.slice().reverse().forEach(card => {
+                const clone = card.cloneNode(true);
+                clone.classList.add('clone');
+                track.insertBefore(clone, track.firstChild);
+            });
 
-        function updateCarousel(transition = true) {
-            const cardWidth = allCards[0].offsetWidth + 32; // card width + gap
+            cards.forEach(card => {
+                const clone = card.cloneNode(true);
+                clone.classList.add('clone');
+                track.appendChild(clone);
+            });
 
-            if (!transition) {
-                track.style.transition = 'none';
-            } else {
-                track.style.transition = 'transform 0.3s ease-in-out';
-            }
+            // Re-query cards
+            let allCards = container.querySelectorAll(cardSelector);
+            let currentIndex = originalCount;
+            let isTransitioning = false;
 
-            const translateX = currentIndex * cardWidth;
-            track.style.transform = `translateX(-${translateX}px)`;
-        }
+            function updateCarousel(transition = true) {
+                const firstCard = allCards[0];
+                if (!firstCard) return;
 
-        // Handle transition end for seamless loop
-        track.addEventListener('transitionend', () => {
-            isTransitioning = false;
+                const cardWidth = firstCard.offsetWidth + 32; // card width + gap
 
-            // If at the end of Set 3 (last clone), jump to end of Set 2 (last original)
-            // Actually, we usually jump when we reach the *start* of a clone set.
-
-            // Ranges:
-            // 0 to originalCount-1: Set 1 (Clones)
-            // originalCount to 2*originalCount-1: Set 2 (Originals)
-            // 2*originalCount to 3*originalCount-1: Set 3 (Clones)
-
-            // If we are in Set 3 (After originals)
-            if (currentIndex >= 2 * originalCount) {
-                track.style.transition = 'none';
-                currentIndex = currentIndex - originalCount;
-                updateCarousel(false);
-            }
-
-            // If we are in Set 1 (Before originals)
-            if (currentIndex < originalCount) {
-                track.style.transition = 'none';
-                currentIndex = currentIndex + originalCount;
-                updateCarousel(false);
-            }
-        });
-
-        function moveSlide(direction) {
-            if (isTransitioning) return;
-            isTransitioning = true;
-
-            if (direction === 'next') {
-                currentIndex++;
-            } else {
-                currentIndex--;
-            }
-            updateCarousel();
-        }
-
-        nextBtn.addEventListener('click', () => {
-            moveSlide('next');
-        });
-
-        prevBtn.addEventListener('click', () => {
-            moveSlide('prev');
-        });
-
-        // Initial update without transition
-        // Wait for layout to settle (important for offsetWidth)
-        window.addEventListener('load', () => {
-             updateCarousel(false);
-        });
-
-        // Also call immediately for development (sometimes load is already fired)
-        updateCarousel(false);
-
-        // Update on resize
-        window.addEventListener('resize', () => {
-            // Re-calculate width. Resetting to a safe index might be good but not strictly necessary if logic holds.
-            // Just update position without transition to prevent glitch
-            track.style.transition = 'none';
-            updateCarousel(false);
-        });
-
-        // Touch Swipe Support for Carousel
-        let touchStartX = 0;
-        let touchEndX = 0;
-
-        track.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        }, { passive: true });
-
-        track.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        }, { passive: true });
-
-        function handleSwipe() {
-            const threshold = 50; // Minimum swipe distance
-            const swipeDistance = touchStartX - touchEndX;
-
-            if (Math.abs(swipeDistance) > threshold) {
-                if (swipeDistance > 0) {
-                    // Swipe Left - Next
-                    moveSlide('next');
+                if (!transition) {
+                    track.style.transition = 'none';
                 } else {
-                    // Swipe Right - Prev
-                    moveSlide('prev');
+                    track.style.transition = 'transform 0.3s ease-in-out';
                 }
+
+                const translateX = currentIndex * cardWidth;
+                track.style.transform = `translateX(-${translateX}px)`;
             }
+
+            track.addEventListener('transitionend', () => {
+                isTransitioning = false;
+                if (currentIndex >= 2 * originalCount) {
+                    track.style.transition = 'none';
+                    currentIndex = currentIndex - originalCount;
+                    updateCarousel(false);
+                }
+                if (currentIndex < originalCount) {
+                    track.style.transition = 'none';
+                    currentIndex = currentIndex + originalCount;
+                    updateCarousel(false);
+                }
+            });
+
+            function moveSlide(direction) {
+                if (isTransitioning) return;
+                isTransitioning = true;
+                if (direction === 'next') {
+                    currentIndex++;
+                } else {
+                    currentIndex--;
+                }
+                updateCarousel();
+            }
+
+            nextBtn.addEventListener('click', () => {
+                moveSlide('next');
+            });
+
+            prevBtn.addEventListener('click', () => {
+                moveSlide('prev');
+            });
+
+            window.addEventListener('load', () => {
+                updateCarousel(false);
+            });
+
+            updateCarousel(false);
+
+            window.addEventListener('resize', () => {
+                track.style.transition = 'none';
+                updateCarousel(false);
+            });
+
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            track.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            track.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                const threshold = 50;
+                const swipeDistance = touchStartX - touchEndX;
+                if (Math.abs(swipeDistance) > threshold) {
+                    if (swipeDistance > 0) moveSlide('next');
+                    else moveSlide('prev');
+                }
+            }, { passive: true });
         }
+
+        // Initialize carousels
+        document.addEventListener('DOMContentLoaded', () => {
+            setupCarousel('cert-carousel', '.cert-card');
+            setupCarousel('services-carousel', '.service-card');
+        });
     </script>
 </body>
 
